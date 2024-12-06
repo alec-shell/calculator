@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.calc-body {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    width: 600px;
+    min-height: 760px;
+    background-color: gray;
+    border-bottom: 2px solid rgba(50,50,50,.2);
+    border-right: 2px solid rgba(50,50,50,.2);
+    border-top: 4px solid rgba(50,50,50,.2);
+    border-left: 4px solid rgba(50,50,50,.2);
+    border-radius: 10px;
+    padding-bottom: 20px;
+}
+
+#display {
+    width: 89%;
+    min-height: 22%;
+    margin: 5%;
+    background-color: rgb(255,255,255,.5);
+    border-bottom: 2px solid rgba(50,50,50,.2);
+    border-right: 2px solid rgba(50,50,50,.2);
+    border-top: 4px solid rgba(50,50,50,.2);
+    border-left: 4px solid rgba(50,50,50,.2);
+}
+
+#buttons {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 0px 5% 5% 5%;
+}
+
+#AC-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#buttons-main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+button {
+    width: 131px;
+    height: 100px;
+    margin: 2px;
+    font-size: 40px;
+    border-bottom: 2px solid rgba(50,50,50,.2);
+    border-right: 2px solid rgba(50,50,50,.2);
+    border-top: 4px solid rgba(50,50,50,.2);
+    border-left: 4px solid rgba(50,50,50,.2);
+    border-radius: 5px;
+}
+
+#logo {
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30px;
+}
