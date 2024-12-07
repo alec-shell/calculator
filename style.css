@@ -17,10 +17,8 @@ body {
     width: 340px;
     min-height: 456px;
     background-color: rgb(110,110,110);
-    border-bottom: 2px solid rgba(25,25,25,.7);
-    border-right: 2px solid rgba(25,25,25,.4);
-    border-top: 3px solid rgba(25,25,25,.2);
-    border-left: 3px solid rgba(25,25,25,.2);
+    border-top: 4px solid rgba(25,25,25,.7);
+    border-left: 4px solid rgba(25,25,25,.4);
     border-radius: 10px;
     padding-bottom: 20px;
     margin-top: 10px;
@@ -56,7 +54,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0px 3px;
+    margin: 0px 20px;
 }
 
 #buttons-main {
@@ -66,7 +64,7 @@ body {
 }
 
 button {
-    width: 71px;
+    width: 62px;
     height: 60px;
     margin: 2px;
     font-size: 40px;
