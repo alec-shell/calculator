@@ -18,10 +18,14 @@ AC.addEventListener("click", () => allClear());
 
 
 function getNumber(number) {
+    //prevent entering new number into solved term until new sign declared.
     if (!isSolvedTerm) {
         //Disallow more than one '.' per leadingTerm.
         if (number === '.' && leadingTerm.includes('.')) {
             number = '';
+            //recursive calls if '.' entered after 'equals' call with '.' present in leadingTerm variable.
+            getNumber(number); 
+            getNumber('.');
         }
         //After page refresh or allClear()
         if (!leadingTerm || !sign) {
@@ -89,9 +93,9 @@ function updateValue(a, b, op) {
         }
         //mitigate floating point artifacts. 
         if (!(value.toFixed(3) % 1)) {
-            return Math.round(value);
+            return String(Math.round(value));
         }
-        return (value.toFixed(3));
+        return String((value.toFixed(3)));
     }
 }
 
