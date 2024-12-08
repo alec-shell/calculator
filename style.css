@@ -28,7 +28,7 @@ body {
     width: 87%;
     min-height: 22%;
     margin: 5%;
-    background-color: rgb(255,255,255,.5);
+    background-color: rgb(255,255,255,.7);
     border: 2px solid rgba(50,50,50,.9);
     border-radius: 5px;
     text-align: right;
@@ -50,11 +50,15 @@ body {
     margin: 0px 5% 5% 5%;
 }
 
-#AC-logo {
+#buttons-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0px 20px;
+}
+
+#buttons-top button {
+    width: 80px;
 }
 
 #buttons-main {
@@ -81,17 +85,10 @@ button:hover {
 
 #AC {
     background-color: rgb(200,0, 0,.5);
-    width: 100px;
 }
 
 #AC:hover {
    background-color: rgb(120,0,0,.5);
-}
-
-#logo {
-    font-size: 20px;
-    font-weight: bold;
-
 }
 
 .footer {

@@ -10,12 +10,39 @@ let equals = document.querySelector("#equal");
 let AC = document.querySelector("#AC");
 let upperDisp = document.querySelector("#upper-display");
 let lowerDisp = document.querySelector("#lower-display");
+let plusMinus = document.querySelector("#plusMinus");
+let backspace = document.querySelector("#backspace");
 
 number.forEach(num => num.addEventListener("click", e => getNumber(e.target.value)));
 operator.forEach(op => op.addEventListener("click", e => getOperator(e.target.value)));
 equals.addEventListener("click", () => returnEquals());
 AC.addEventListener("click", () => allClear());
+plusMinus.addEventListener("click", () => changeSign());
+backspace.addEventListener("click", () => deleteChar());
 
+function changeSign() {
+    if (!isSolvedTerm) {
+        if (leadingTerm.startsWith("-")) {
+            leadingTerm = leadingTerm.slice(1);
+        }
+        else {
+            leadingTerm = '-' + leadingTerm;
+        }
+        updateDisplay(leadingTerm,trailingTerm,sign);
+    }
+}
+
+function deleteChar() {
+    signList = '+-x÷'
+    
+    //Don't allow deletion of solution or deleting after sign input. 
+    if(!isSolvedTerm && !signList.includes(lowerDisp.innerText[lowerDisp.innerText.length - 1])) {
+        if (leadingTerm.length > 0) {
+            leadingTerm = leadingTerm.slice(0,-1);
+        }
+        updateDisplay(leadingTerm, trailingTerm, sign);
+    }
+}
 
 function getNumber(number) {
     //prevent entering new number into solved term until new sign declared.
@@ -91,7 +118,7 @@ function updateValue(a, b, op) {
                 value = b / a;
                 break;
         }
-        //mitigate floating point artifacts. 
+        //Mitigate floating point artifacts. 
         if (!(value.toFixed(3) % 1)) {
             return String(Math.round(value));
         }
@@ -101,7 +128,7 @@ function updateValue(a, b, op) {
 
 
 function returnEquals() {
-    //'solved' boolean check prevents 'equals' event if new sign and leadingTerm haven't been selected.
+    //'solved' boolean check prevents 'equals' event if sign and leadingTerm are empty strings.
     if (!solved) {
         solved = true;
         leadingTerm = updateValue(leadingTerm, trailingTerm, sign);
