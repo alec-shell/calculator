@@ -115,8 +115,14 @@ function updateValue(a, b, op) {
                 value = b * a;
                 break;
             case '÷':
-                value = b / a;
-                break;
+                if (a === 0) {
+                    return alert("Bhaskara II says NO");
+                }
+                else {
+                    value = b / a;
+                    break;
+                }
+
         }
         //Mitigate floating point artifacts. 
         if (!(value.toFixed(3) % 1)) {
